@@ -184,22 +184,27 @@ Implementation Details
 9.2. Intermediate Data Communication
 The master function serves as the central hub for communication within the MapReduce system, overseeing the coordination and data flow between mappers and reducers. It takes on the responsibility of collecting and disseminating crucial information, ensuring a seamless transition from the mapping to the reducing phase. For example, it does the following:
 1.	Intermediate File Location Collection:
+   
 o	Upon the successful completion of all mapper tasks, the master function collects the location values of the generated intermediary files.
+
 o	These intermediary files encapsulate partial results or outputs produced during the mapping phase.
-2.	Communication with Reducers:
+
+3.	Communication with Reducers:
+   
 o	The master, having gathered all necessary information, communicates with the reducers.
+
 o	It transmits the collected intermediary file locations to the reducers, enabling them to retrieve and process the relevant data for further computations.
 
 
 10. References:
 
-1.	Justin Zobel and Alistair Moffat. 2006. Inverted files for text search engines. ACM Comput. Surv. 38, 2 (2006), 6–es. https://doi.org/10.1145/1132956.1132959
-2.	https://courses.engr.illinois.edu/cs423/sp2014/MPs/mp4/MP4.html#tok
-3.	https://github.com/HiGal/GUSE
-4.	https://courses.engr.illinois.edu/cs423/sp2014/MPs/mp4/MP4.html
-5.	https://www.dcs.bbk.ac.uk/~dell/teaching/cc/book/ditp/ditp_ch3.pdf
-6.	https://dmice.ohsu.edu/bedricks/courses/cs624/lecs/w2_lec1.pdf 
-7.	https://nlp.stanford.edu/IR-book/html/htmledition/distributed-indexing-1.html
-8.	https://nlp.stanford.edu/IR-book/html/htmledition/single-pass-in-memory-indexing-1.html
-9.	https://www.youtube.com/watch?v=sUCiLIXjENw
-10.	https://web.stanford.edu/class/archive/cs/cs110/cs110.1196/static/lectures/18-mapreduce.pdf
+Justin Zobel and Alistair Moffat. 2006. Inverted files for text search engines. ACM Comput. Surv. 38, 2 (2006), 6–es. https://doi.org/10.1145/1132956.1132959
+https://courses.engr.illinois.edu/cs423/sp2014/MPs/mp4/MP4.html#tok
+https://github.com/HiGal/GUSE
+https://courses.engr.illinois.edu/cs423/sp2014/MPs/mp4/MP4.html
+https://www.dcs.bbk.ac.uk/~dell/teaching/cc/book/ditp/ditp_ch3.pdf
+https://dmice.ohsu.edu/bedricks/courses/cs624/lecs/w2_lec1.pdf 
+https://nlp.stanford.edu/IR-book/html/htmledition/distributed-indexing-1.html
+https://nlp.stanford.edu/IR-book/html/htmledition/single-pass-in-memory-indexing-1.html
+https://www.youtube.com/watch?v=sUCiLIXjENw
+https://web.stanford.edu/class/archive/cs/cs110/cs110.1196/static/lectures/18-mapreduce.pdf
